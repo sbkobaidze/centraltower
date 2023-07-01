@@ -1,0 +1,150 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"header": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Excepteur proident eu duis cillum esse aliqua dolore officia eiusmod qui."
+						}
+					}
+				]
+			},
+			"rooms": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Ipsum eu quis aliqua do magna ex magna aliquip aliqua."
+						}
+					}
+				]
+			},
+			"floor": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Laboris enim commodo laborum eu esse est laborum aute."
+						}
+					}
+				]
+			},
+			"space": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Consequat sint id proident qui sunt occaecat aliquip labore quis voluptate duis."
+						}
+					}
+				]
+			},
+			"price": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Cupidatat cupidatat ad velit sit duis irure commodo velit duis reprehenderit. Amet Lorem sunt id non ad fugiat."
+						}
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"floorplanimage",
+						{
+							"__TYPE__": "ImageContent",
+							"origin": {
+								"id": "main",
+								"url": "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b",
+								"width": 3560,
+								"height": 5340
+							},
+							"url": "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b",
+							"width": 3560,
+							"height": 5340,
+							"edit": {
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								},
+								"background": "transparent"
+							},
+							"thumbnails": {}
+						}
+					],
+					[
+						"rooms",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Mollit excepteur culpa amet aliquip labore non in est Lorem laboris est velit. Nisi nulla esse ea incididunt laborum ipsum sint ex incididunt veniam consequat sint qui do do. Voluptate Lorem culpa adipisicing esse ad occaecat amet officia dolore ipsum enim do."
+									}
+								}
+							]
+						}
+					],
+					[
+						"floor",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Do reprehenderit cillum eiusmod ea ipsum consectetur do ipsum adipisicing. Aliquip eiusmod anim elit elit dolor nostrud sint."
+									}
+								}
+							]
+						}
+					],
+					[
+						"space",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Enim Lorem labore commodo aliquip sit tempor."
+									}
+								}
+							]
+						}
+					],
+					[
+						"price",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Reprehenderit duis magna ipsum duis dolore irure non nisi ipsum. Occaecat voluptate adipisicing voluptate qui officia occaecat magna cillum Lorem mollit consequat id commodo. Aliquip amet aliquip labore."
+									}
+								}
+							]
+						}
+					]
+				]
+			}
+		]
+	}
+]

@@ -1,0 +1,50 @@
+{
+  "id": "navbar",
+  "label": "navbar",
+  "format": "custom",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "logo": {
+        "type": "Image",
+        "config": { "label": "logo", "constraint": {}, "thumbnails": [] }
+      },
+      "contact": {
+        "type": "StructuredText",
+        "config": {
+          "label": "contact",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "projects": {
+        "type": "StructuredText",
+        "config": {
+          "label": "projects",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "about": {
+        "type": "StructuredText",
+        "config": {
+          "label": "about",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "facebook": {
+        "type": "Link",
+        "config": { "label": "facebook", "placeholder": "", "select": null }
+      },
+      "instagram": {
+        "type": "Link",
+        "config": { "label": "instagram", "placeholder": "", "select": null }
+      }
+    }
+  }
+}
