@@ -57,6 +57,39 @@
 						}
 					}
 				]
+			},
+			"columnfilter": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Nostrud esse laboris id aliquip. Pariatur fugiat do velit esse consectetur exercitation labore mollit ipsum velit irure sit tempor."
+						}
+					}
+				]
+			},
+			"nextbutton": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Sit reprehenderit laborum non veniam sunt aliqua nulla esse culpa enim ut dolore do incididunt."
+						}
+					}
+				]
+			},
+			"backbutton": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Dolor ipsum veniam sit ullamco veniam ea amet consectetur velit anim. Esse adipisicing elit incididunt labore non ipsum incididunt laboris. Reprehenderit esse aliquip sunt aliquip labore nostrud cillum exercitation do eiusmod."
+						}
+					}
+				]
 			}
 		},
 		"items": [
@@ -66,7 +99,6 @@
 					[
 						"floorplanimage",
 						{
-							"__TYPE__": "ImageContent",
 							"origin": {
 								"id": "main",
 								"url": "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b",
@@ -84,6 +116,9 @@
 								},
 								"background": "transparent"
 							},
+							"credits": null,
+							"alt": null,
+							"__TYPE__": "ImageContent",
 							"thumbnails": {}
 						}
 					],

@@ -2,6 +2,8 @@ import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import localFont from "next/font/local";
 import { PrismicPreview } from "@prismicio/next";
+import { AnimatePresence } from "framer-motion";
+import { useRouter } from "next/router";
 
 const myFont = localFont({
   src: [
@@ -19,9 +21,13 @@ const myFont = localFont({
   variable: "--font-firago",
 });
 export default function App({ Component, pageProps }: AppProps) {
+  const router = useRouter()
+
   return (
     <main className={myFont.className}>
-      <Component {...pageProps} />
+      <AnimatePresence initial={true} mode="wait">
+        <Component {...pageProps} key={router.pathname} />
+        </AnimatePresence>
       <PrismicPreview repositoryName={'centraltower'} />
 
     </main>

@@ -15,32 +15,27 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { PrismicNextImage,PrismicNextLink } from "@prismicio/next";
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import Preloader from "../Preloader";
-import { Facebook,Instagram } from "lucide-react";
+import { Facebook, Instagram } from "lucide-react";
+import { useParams,usePathname } from 'next/navigation'
 
 const Nav = ({ headerData }: { headerData: NavbarDocumentData }) => {
   const [currentHover, setCurrentHover] = useState("");
   const menuControls = useAnimationControls();
+
+  console.log(headerData.contact)
   const navigation = [
     headerData.contact,
     headerData.about,
     headerData.projects,
   ];
 
+  const path = usePathname()
+
   const router = useRouter();
     const { locales, defaultLocale,locale:activeLocale,pathname } = router;
-    const [isLoading, setIsLoading] = useState(true); 
   
-
-
-    useEffect(() => {
-            // Simulating some async initialization task
-            setTimeout(() => {
-                setIsLoading(false);
-            }, 1000);
-        }
-    , []);
  
   const x = useMotionValue(-2000);
   const handleAnimation = () => {
@@ -54,7 +49,7 @@ const Nav = ({ headerData }: { headerData: NavbarDocumentData }) => {
   };
 
   const changeLanguage = (val: string) => {
-    router.push(pathname, pathname, { locale: val });
+    router.push(path, path, { locale: val });
   };
   const displayNavigation = navigation.map((item, index) => {
     return (
@@ -70,13 +65,13 @@ const Nav = ({ headerData }: { headerData: NavbarDocumentData }) => {
           setCurrentHover("");
         }}
       >
-        {asText(item)}
+        <Link href={'/projects'}>  {asText(item)}</Link>
         {currentHover === asText(item) && (
           <motion.span
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             exit={{ scaleX: 0 }}
-            className="absolute  left-0 top-full block h-[1px] w-full bg-goldprimary"
+            className={`absolute  left-0 top-full block h-[1px] w-full  ${router.pathname.includes('blog') ?'bg-greenprimary' :'bg-goldprimary'} `}
           ></motion.span>
         )}
       </motion.div>
@@ -85,18 +80,17 @@ const Nav = ({ headerData }: { headerData: NavbarDocumentData }) => {
 
   return (
       <>
-          {isLoading && <Preloader />}
+        {/* <Preloader /> */}
       <motion.div
-        className={`navbarcontent  w-full  border-b-2 text-white `}
-        initial={{ opacity: 0, y: -100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.25 }}
-        exit={{ opacity: 0, y: -100 }}
+        className={`navbarcontent  w-full  border-b-2 ${router.pathname.includes('blog') ?'text-gray' :'text-white'}  `}
+        // initial={{ opacity: 0, y: -100 }}
+        // animate={{ opacity: 1, y: 0 }}
+        // transition={{ duration:0.75 }}
       >
         <div className="container w-full  flex items-center justify-between h-24 ">
                   <div>
                       <Link  href='/' >
-                          <PrismicNextImage field={headerData.logo} height={80} width={80} /> 
+                          <PrismicNextImage field={headerData.logo} height={60} width={60} /> 
                           </Link>
           </div>
           <div className="flex gap-7 items-center  ">
@@ -125,13 +119,12 @@ const Nav = ({ headerData }: { headerData: NavbarDocumentData }) => {
         </div>
       </motion.div>
 
-      <div></div>
       <motion.div
-        className="absolute  w-full bg-gray h-full top-24"
+        className="absolute  w-full bg-gray h-full top-24 hidden "
         initial={{ y: -2000 }}
         animate={menuControls}
       >
-        <ul className="container lg:pr-24 lg:pl-40  py-40 flex flex-col gap-5 text-white menu-items absolute z-30">
+        <ul className={`container lg:pr-24 lg:pl-40  py-40 flex flex-col gap-5  ${router.pathname.includes('blog' ?'text-gray' :'text-white')}  menu-items absolute z-30`}>
           <li className=" text-4xl lg:text-5xl font-semibold menu-item">
             Floor Plans
           </li>

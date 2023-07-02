@@ -1,0 +1,102 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Tempor eiusmod nisi eiusmod officia fugiat laborum eu ex non non esse elit deserunt culpa eu."
+						}
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"title",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Sint sint reprehenderit aliquip dolore tempor officia esse dolor voluptate veniam aliquip. Ipsum eiusmod aliquip deserunt aute laborum sit ut proident ut aliquip ipsum adipisicing id aliquip irure."
+									}
+								}
+							]
+						}
+					],
+					[
+						"blogimage",
+						{
+							"origin": {
+								"id": "main",
+								"url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2",
+								"width": 5616,
+								"height": 3744
+							},
+							"url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2",
+							"width": 5616,
+							"height": 3744,
+							"edit": {
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								},
+								"background": "transparent"
+							},
+							"credits": null,
+							"alt": null,
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					],
+					[
+						"createdat",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Date",
+							"value": "2021-08-17"
+						}
+					],
+					[
+						"bloguid",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Quis exercitation reprehenderit ut culpa incididunt veniam irure. Duis enim cupidatat fugiat consectetur esse incididunt do laboris consectetur cupidatat."
+									}
+								}
+							]
+						}
+					],
+					[
+						"description",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Cupidatat proident ea officia mollit magna consectetur ea ex cillum ad magna. Aute aliquip laborum et do et ut cupidatat proident qui aliquip culpa sit id do. Veniam laboris nisi adipisicing velit labore dolore aliqua."
+									}
+								}
+							]
+						}
+					]
+				]
+			}
+		]
+	}
+]

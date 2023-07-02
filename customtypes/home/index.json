@@ -16,7 +16,8 @@
         "config": {
           "choices": {
             "hero": { "type": "SharedSlice" },
-            "table": { "type": "SharedSlice" }
+            "table": { "type": "SharedSlice" },
+            "blog_slider": { "type": "SharedSlice" }
           }
         }
       }

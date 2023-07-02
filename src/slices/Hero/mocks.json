@@ -26,7 +26,6 @@
 				]
 			},
 			"image": {
-				"__TYPE__": "ImageContent",
 				"origin": {
 					"id": "main",
 					"url": "https://images.unsplash.com/photo-1593642633279-1796119d5482",
@@ -44,7 +43,43 @@
 					},
 					"background": "transparent"
 				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Aliqua nisi in cupidatat eiusmod. Aliquip tempor excepteur exercitation reprehenderit. Labore nulla ut ullamco in."
+						}
+					}
+				]
+			},
+			"presentationbutton": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Non incididunt elit minim do incididunt reprehenderit consequat commodo elit in nulla laborum pariatur. Labore ut magna deserunt excepteur ut irure reprehenderit aute reprehenderit velit occaecat reprehenderit dolor."
+						}
+					}
+				]
+			},
+			"pdflink": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"id": "mock_Media_link",
+					"kind": "image/jpeg",
+					"name": "mock_name",
+					"url": "https://source.unsplash.com/daily",
+					"size": "0",
+					"__TYPE__": "FileLink"
+				}
 			}
 		},
 		"items": []
