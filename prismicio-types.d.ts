@@ -159,6 +159,39 @@ interface FlatsDocumentData {
    */
   description: prismic.RichTextField;
   /**
+   * floorplanimg field in *Flats*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: flats.floorplanimg
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  floorplanimg: prismic.ImageField<never>;
+  /**
+   * floor field in *Flats*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: flats.floor
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  floor: prismic.RichTextField;
+  /**
+   * rooms field in *Flats*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: flats.rooms
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  rooms: prismic.RichTextField;
+  /**
    * Slice Zone field in *Flats*
    *
    * - **Field Type**: Slice Zone
@@ -807,62 +840,6 @@ interface TableSliceDefaultPrimary {
   backbutton: prismic.RichTextField;
 }
 /**
- * Item in Table → Items
- *
- */
-export interface TableSliceDefaultItem {
-  /**
-   * floorplanimage field in *Table → Items*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: table.items[].floorplanimage
-   * - **Documentation**: https://prismic.io/docs/core-concepts/image
-   *
-   */
-  floorplanimage: prismic.ImageField<never>;
-  /**
-   * rooms field in *Table → Items*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: table.items[].rooms
-   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-   *
-   */
-  rooms: prismic.RichTextField;
-  /**
-   * floor field in *Table → Items*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: table.items[].floor
-   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-   *
-   */
-  floor: prismic.RichTextField;
-  /**
-   * space field in *Table → Items*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: table.items[].space
-   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-   *
-   */
-  space: prismic.RichTextField;
-  /**
-   * price field in *Table → Items*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: table.items[].price
-   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-   *
-   */
-  price: prismic.RichTextField;
-}
-/**
  * Default variation for Table Slice
  *
  * - **API ID**: `default`
@@ -873,7 +850,7 @@ export interface TableSliceDefaultItem {
 export type TableSliceDefault = prismic.SharedSliceVariation<
   "default",
   Simplify<TableSliceDefaultPrimary>,
-  Simplify<TableSliceDefaultItem>
+  never
 >;
 /**
  * Slice variation for *Table*
@@ -927,7 +904,6 @@ declare module "@prismicio/client" {
       LivingRoomSliceVariation,
       LivingRoomSlice,
       TableSliceDefaultPrimary,
-      TableSliceDefaultItem,
       TableSliceDefault,
       TableSliceVariation,
       TableSlice,

@@ -19,9 +19,10 @@ export type LivingRoomProps = SliceComponentProps<Content.LivingRoomSlice>;
  */
 const LivingRoom = ({ slice }: LivingRoomProps): JSX.Element => {
 
-  const images = slice.items.map(item => {
-    return <PrismicNextImage  field={item.image} width={300} height={200} />
+  const images = slice.items.map((item,index)=> {
+    return <PrismicNextImage  field={item.image} key={index} width={300} height={200} />
   })
+
   
   return (
     <section
@@ -30,7 +31,7 @@ const LivingRoom = ({ slice }: LivingRoomProps): JSX.Element => {
     >
       <Accordion type="single" collapsible >
   <AccordionItem value="item-1" >
-    <AccordionTrigger><h2 className="text-white"> <PrismicRichText field={slice.primary.title} /></h2></AccordionTrigger>
+    <AccordionTrigger><h2 className="text-white text-4xl font-bold" > <PrismicRichText field={slice.primary.title} /></h2></AccordionTrigger>
           <AccordionContent >
             <div className="flex flex-wrap gap-5">
               {images}

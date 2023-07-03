@@ -19,12 +19,13 @@ import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { asText } from "@prismicio/client";
 import { useToast } from "@/components/ui/use-toast";
-import { PopupDocument } from "../../../prismicio-types";
+import { FlatsDocument, PopupDocument } from "../../../prismicio-types";
+import Building from "@/components/Building";
 
 /**
  * Props for `Hero`.
  */
-export type HeroProps = SliceComponentProps<Content.HeroSlice,PopupDocument>;
+export type HeroProps = SliceComponentProps<Content.HeroSlice,[PopupDocument,FlatsDocument[]]>;
 
 /**
  * Component for "Hero" Slices.
@@ -32,18 +33,19 @@ export type HeroProps = SliceComponentProps<Content.HeroSlice,PopupDocument>;
 const Hero = ({ slice,context }: HeroProps): JSX.Element => {
   const [number, setNumber] = useState('')
   const { toast } = useToast()
+
   
 
   const submitNumber = () => {
     if (number.length < 9) {
       toast({
         variant: "destructive",
-        description:<PrismicRichText  field={context.data.toastdestructive}/>
+        description:<PrismicRichText  field={context[0].data.toastdestructive}/>
       })
     } else {
       toast({
         variant: "default",
-        description:<PrismicRichText  field={context.data.toastsucc}/>
+        description:<PrismicRichText  field={context[0].data.toastsucc}/>
       })
       const link = document.createElement("a");
       link.href = "path/to/your/file.pdf"; // Replace with the actual URL of the PDF file
@@ -72,17 +74,17 @@ const Hero = ({ slice,context }: HeroProps): JSX.Element => {
             <AlertDialogTrigger><h2 className={` ${buttonVariants({ className: 'bg-goldprimary',variant:"default" })} w-32 h-8 `}> <PrismicRichText  field={slice.primary.presentationbutton}/></h2></AlertDialogTrigger>
   <AlertDialogContent>
     <AlertDialogHeader>
-      <AlertDialogTitle><PrismicRichText  field={context.data.header}/></AlertDialogTitle>
+      <AlertDialogTitle><PrismicRichText  field={context[0].data.header}/></AlertDialogTitle>
       <AlertDialogDescription>
-      <PrismicRichText field={context.data.description} />
+      <PrismicRichText field={context[0].data.description} />
 
       </AlertDialogDescription>
               </AlertDialogHeader>
-              <Input type="number" placeholder={asText(context.data.inputplaceholder)} value={number} onChange={(e) => setNumber(e.target.value)} />
+              <Input type="number" placeholder={asText(context[0].data.inputplaceholder)} value={number} onChange={(e) => setNumber(e.target.value)} />
     <AlertDialogFooter>
-      <AlertDialogCancel>      <PrismicRichText field={context.data.cancelbutton} />
+      <AlertDialogCancel>      <PrismicRichText field={context[0].data.cancelbutton} />
 </AlertDialogCancel>
-      <AlertDialogAction  ><h2 onClick={() => submitNumber()} className={` ${buttonVariants({ className: 'bg-greenprimary w-full hover:bg-slate-800',variant:"default" })} `}> <PrismicRichText field={context.data.submitbutton} /></h2></AlertDialogAction>
+      <AlertDialogAction  ><h2 onClick={() => submitNumber()} className={` ${buttonVariants({ className: 'bg-greenprimary w-full hover:bg-slate-800',variant:"default" })} `}> <PrismicRichText field={context[0].data.submitbutton} /></h2></AlertDialogAction>
     </AlertDialogFooter>
   </AlertDialogContent>
 </AlertDialog>
@@ -90,8 +92,8 @@ const Hero = ({ slice,context }: HeroProps): JSX.Element => {
           
         </div>
       </div>
-      <div className="lg:w-1/2 h-full w-full">
-        <PrismicNextImage field={slice.primary.image} />
+      <div className="lg:w-1/2 w-full relative h-auto">
+        <Building />
       </div>
     </section>
   );

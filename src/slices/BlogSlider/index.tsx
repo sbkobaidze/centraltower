@@ -16,15 +16,17 @@ import Link from "next/link";
 import { PrismicRichText } from "@prismicio/react";
 import { asText } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
+import { BlogDocument } from "../../../prismicio-types";
+import { PopupDocument,FlatsDocument } from "../../../prismicio-types";
 /**
  * Props for `BlogSlider`.
  */
-export type BlogSliderProps = SliceComponentProps<Content.BlogSliderSlice>;
+export type BlogSliderProps = SliceComponentProps<Content.BlogSliderSlice,[PopupDocument,FlatsDocument[],BlogDocument[]]>;
 
 /**
  * Component for "BlogSlider" Slices.
  */
-const BlogSlider = ({ slice }: BlogSliderProps): JSX.Element => {
+const BlogSlider = ({ slice,context }: BlogSliderProps): JSX.Element => {
   const [carouselWidth, setCarouselWidth] = useState(0);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [dragging, setDragging] = useState(false);
@@ -34,7 +36,6 @@ const BlogSlider = ({ slice }: BlogSliderProps): JSX.Element => {
   const x = useMotionValue(0);
   const [shouldRenderScrollRight, setShouldRenderScrollRight] = useState(false);
 
-  console.log(slice.items);
   useEffect(() => {
     if (carouselRef.current) {
       setCarouselWidth(
@@ -82,20 +83,25 @@ const BlogSlider = ({ slice }: BlogSliderProps): JSX.Element => {
     }
   };
 
-  const cards = slice?.items?.map((item, index) => {
+  
+
+
+  const card2 = context[2].map((item, index) => {
     return (
       <Card
-        className={`min-w-[300px] h-[300px] ${
+        key={index}
+        
+        className={`max-w-[300px] h-[300px] ${
           dragging ? "pointer-events-none" : "cursor-pointer"
         }  `}
       >
         <CardHeader>
-          <h2 className="text-xl font-bold"><PrismicRichText field={item.title} /></h2> 
-          <PrismicRichText field={item.description} />
+          <h2 className="text-xl font-bold"><PrismicRichText field={item.data.title} /></h2> 
+          {asText(item.data.text).slice(0,40)+'...'}
         </CardHeader>
-        <Link href={`/blog/${asText(item.bloguid)}`}>
+        <Link href={`/blog/${item.uid}`}>
           <CardContent className="h-2/3 w-full flex justify-center">
-            <PrismicNextImage field={item.blogimage} />
+            <PrismicNextImage field={item.data.image} />
           </CardContent>
         </Link>
         <CardFooter></CardFooter>
@@ -163,17 +169,8 @@ const BlogSlider = ({ slice }: BlogSliderProps): JSX.Element => {
             dragConstraints={{ right: 0, left: -carouselWidth }}
             className="inner-carosuel  flex  gap-5 "
           >
-            {/* {props.cards.map((card, index) => {
-              return (
-                <div
-                  key={index}
-                  className={` ${dragging ? "pointer-events-none" : ""}`}
-                >
-                  {card}
-                </div>
-              )
-            })} */}
-            {cards}
+         
+            {card2}
           </motion.div>
         </motion.div>
       </div>

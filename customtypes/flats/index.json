@@ -47,6 +47,32 @@
           "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
         }
       },
+      "floorplanimg": {
+        "type": "Image",
+        "config": {
+          "label": "floorplanimg",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "floor": {
+        "type": "StructuredText",
+        "config": {
+          "label": "floor",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "rooms": {
+        "type": "StructuredText",
+        "config": {
+          "label": "rooms",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

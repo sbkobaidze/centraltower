@@ -24,7 +24,6 @@ const Nav = ({ headerData }: { headerData: NavbarDocumentData }) => {
   const [currentHover, setCurrentHover] = useState("");
   const menuControls = useAnimationControls();
 
-  console.log(headerData.contact)
   const navigation = [
     headerData.contact,
     headerData.about,
@@ -65,7 +64,7 @@ const Nav = ({ headerData }: { headerData: NavbarDocumentData }) => {
           setCurrentHover("");
         }}
       >
-        <Link href={'/projects'}>  {asText(item)}</Link>
+        <Link href={'#flats'}>  {asText(item)}</Link>
         {currentHover === asText(item) && (
           <motion.span
             initial={{ scaleX: 0 }}
@@ -82,7 +81,7 @@ const Nav = ({ headerData }: { headerData: NavbarDocumentData }) => {
       <>
         {/* <Preloader /> */}
       <motion.div
-        className={`navbarcontent  w-full  border-b-2 ${router.pathname.includes('blog') ?'text-gray' :'text-white'}  `}
+        className={`navbarcontent  w-full  border-b-2 border-goldprimary ${router.pathname.includes('blog') ?'text-gray' :'text-white'}  `}
         // initial={{ opacity: 0, y: -100 }}
         // animate={{ opacity: 1, y: 0 }}
         // transition={{ duration:0.75 }}
@@ -120,7 +119,7 @@ const Nav = ({ headerData }: { headerData: NavbarDocumentData }) => {
       </motion.div>
 
       <motion.div
-        className="absolute  w-full bg-gray h-full top-24 hidden "
+        className="absolute  w-full bg-gray h-full top-24 text-white z-80 "
         initial={{ y: -2000 }}
         animate={menuControls}
       >

@@ -46,7 +46,6 @@ const Blog = ({
       );
     }
 
-    console.log([link, msg, title]);
   };
   return (
     <div>
@@ -124,7 +123,6 @@ export const getStaticProps: GetStaticProps = async ({
 }: GetStaticPropsContext) => {
   const localeModified =
     locale === "ka" ? "ka-eu" : locale === "en" ? "en-us" : "ru";
-  console.log(localeModified);
 
   const client = createClient();
   //@ts-ignore

@@ -18,6 +18,8 @@ import {
 
 } from "@tanstack/react-table"
 
+import { useRouter } from "next/router"
+
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -64,12 +66,15 @@ export type Floor = {
   space: string;
   floor: string;
   price: string;
+  uid:string,
 };
 
 export function DataTable<TData, TValue>({
   data,
   headers
 }: DataTableProps<TData, TValue>) {
+
+  const router = useRouter()
 
   const [sorting, setSorting] = useState<SortingState>([])
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({})
@@ -78,7 +83,8 @@ export function DataTable<TData, TValue>({
     rooms: headers.rooms,
     floor: headers.floor,
     price: headers.price,
-    space:headers.space
+    space: headers.space,
+    
     
   }
 
@@ -252,7 +258,10 @@ export function DataTable<TData, TValue>({
           {table.getRowModel().rows?.length ? (
             table.getRowModel().rows.map((row) => (
               <TableRow
+                className="cursor-pointer"
                 key={row.id}
+                //@ts-ignore
+                onClick={() => router.push(`/flats/${row.original.uid}`) }
                 data-state={row.getIsSelected() && "selected"}
               >
                 {row.getVisibleCells().map((cell) => (

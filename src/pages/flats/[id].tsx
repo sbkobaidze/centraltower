@@ -9,7 +9,8 @@ import { formatCurrency } from "@/lib/currencyFormater";
 
   import { components } from "@/slices";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { SliceZone } from "@prismicio/react";
+import { PrismicRichText, SliceZone } from "@prismicio/react";
+import { RichTextField } from "@prismicio/client";
 
 const Flats = ({
   page,
@@ -24,36 +25,23 @@ const Flats = ({
     <div>
       <Layout headerData={header.data}>
         <div className="container w-full h-full py-12">
-          <div className="w-full h-full flex gap-7">
-            <div className="w-3/5 h-full border-r-2 flex flex-col ">
-              <h2 className="text-4xl font-bold text-white"> Floor Plan</h2>
+          <div className="w-full h-full lg:flex-row flex gap-7 flex-col">
+            <div className="lg:w-3/5 w-full h-full border-r-2 flex flex-col  ">
+              {/* <h2 className="text-4xl font-bold text-white"> Floor Plan</h2> */}
 
               <img src="/floorplan.png" className="w-full h-full" />
             </div>
 
-            <div className="w-2/5 h-full flex flex-col gap-3 text-white ">
-                          <h2 className="text-5xl font-bold "> 42M2 Flat</h2>
+            <div className="lg:w-2/5 w-full h-full flex flex-col gap-5 text-white ">
+                          <h2 className="text-5xl font-bold "> <PrismicRichText field={page.data.title} /></h2>
                           
-                          <h3 className="font-semibold text-3xl border-b-2 border-goldprimary">{formatCurrency(375645)} | 191 m</h3>
+                          <h3 className="font-semibold text-3xl border-b-2 border-goldprimary flex"><PrismicRichText field={page.data.price} /> | <PrismicRichText field={page.data.space} /> m</h3>
                           <div>
-                              <h2 className="font-semibold text-3xl">Details</h2>
-                          <ul className="text-2xl">
-                              <li>
-                                  2 Bedrooms
-                              </li>
-                              <li>3 Toilets</li>
-                              <li>3 Toilets</li>
-                              <li>3 Toilets</li>
-                              <li>3 Toilets</li>
-                              <li>3 Toilets</li>
-                              <li>3 Toilets</li>
-                              <li>3 Toilets</li>
-                              
-                              <li>3 Toilets</li>
-                              </ul>
+                              <h2 className="font-semibold text-3xl"></h2>
+                          
                                 <div className="flex flex-col gap-3">
                               <Button className="w-full bg-primary"> PDF</Button>
-                              <Button className="w-full bg-primary"> Book Visit</Button>
+                              <Button className="w-full bg-primary">Book </Button>
                               </div>
 
   
@@ -61,9 +49,13 @@ const Flats = ({
                           </div>
                           <Tabs defaultValue="description"  >
   <TabsList className="w-full">
-    <TabsTrigger value="description">Description</TabsTrigger>
-  </TabsList>
-  <TabsContent value="description">Change your password here.</TabsContent>
+                  <TabsTrigger value="description">TEST </TabsTrigger>
+                
+                </TabsList>
+                <TabsContent value="description">
+                    <PrismicRichText field={page.data.description} />
+
+                  </TabsContent>
 </Tabs>
                          
             </div>
