@@ -39,10 +39,10 @@ const Nav = ({ headerData }: { headerData: NavbarDocumentData }) => {
   const x = useMotionValue(-2000);
   const handleAnimation = () => {
     if (x.get() < 0) {
-      menuControls.start({ y: 0 });
+      menuControls.start({ y: '0%' });
       x.set(0);
     } else {
-      menuControls.start({ y: -2000 });
+      menuControls.start({ y: '-200%' });
       x.set(-2000);
     }
   };
@@ -120,7 +120,7 @@ const Nav = ({ headerData }: { headerData: NavbarDocumentData }) => {
 
       <motion.div
         className="absolute  w-full bg-gray h-full top-24 text-white z-[100] "
-        initial={{ y: -2000 }}
+        initial={{ y: '-200%' }}
         animate={menuControls}
       >
         <ul className={`container lg:pr-24 lg:pl-40  py-40 flex flex-col gap-5  ${router.pathname.includes('blog' ?'text-gray' :'text-white')}  menu-items absolute z-30`}>
