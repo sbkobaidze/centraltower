@@ -119,7 +119,7 @@ const Nav = ({ headerData }: { headerData: NavbarDocumentData }) => {
       </motion.div>
 
       <motion.div
-        className="absolute  w-full bg-gray h-full top-24 text-white z-80 "
+        className="absolute  w-full bg-gray h-full top-24 text-white z-[100] "
         initial={{ y: -2000 }}
         animate={menuControls}
       >
